@@ -1,20 +1,45 @@
 package testCases;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.net.URL;
+
 import java.util.concurrent.TimeUnit;
 
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import org.testng.annotations.BeforeMethod;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
-import io.appium.java_client.MobileElement;
-import io.appium.java_client.android.AndroidDriver;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
+
+
+import methods.Amazon_App_Methods;
 
 public class PurchaseAnItem {
 	
-	@SuppressWarnings("rawtypes")
-	private static AndroidDriver driver;
 	
-
+	private static WebDriver driver;
+	ConfigFile config = new ConfigFile();
+	
+	
+	XSSFWorkbook wb;
+	static XSSFSheet sheet;
+	FileInputStream fis;
+	
+	
+	@BeforeTest
+	public void g() throws IOException
+	{
+	File src = new File(config.getFilePath());
+	fis = new FileInputStream(src);
+	wb = new XSSFWorkbook(fis);
+	sheet = wb.getSheetAt(0);
+	}
 	
 	@BeforeMethod(alwaysRun = true)
 	public void startAppium() throws Exception {
@@ -41,11 +66,23 @@ public class PurchaseAnItem {
 		// Create RemoteWebDriver instance and connect to the Appium server
 		// It will launch the Amazon Shopping App in Android Device using the configurations
 		// specified in Desired Capabilities
-		driver = new AndroidDriver<MobileElement>(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
+		driver = new RemoteWebDriver(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
 
 		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 		Thread.sleep(3000);
 		System.out.println("Session is created");
 	}
+
+	@Test
+	public void purchaseAnItem() throws Exception
+	{
+		Amazon_App_Methods.loginToApp(driver,config.getFilePath(), config.getUserName());
+		Amazon_App_Methods.searchAProduct(driver, "65-inch TV");
+	}
+	
+	
+	
+	
+	
 
 }

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Amazon Shopping Purchases]">
+  <test thread-count="5" name="Amazon Shopping App Test Cases(failed)">
+    <classes>
+      <class name="testCases.PurchaseAnItem">
+        <methods>
+          <include name="startAppium"/>
+          <include name="g"/>
+          <include name="purchaseAnItem"/>
+        </methods>
+      </class> <!-- testCases.PurchaseAnItem -->
+    </classes>
+  </test> <!-- Amazon Shopping App Test Cases(failed) -->
+</suite> <!-- Failed suite [Amazon Shopping Purchases] -->
