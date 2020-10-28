@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Amazon Shopping Purchases" duration-ms="82997" started-at="2020-10-28T15:57:23Z" finished-at="2020-10-28T15:58:46Z">
+    <groups>
+    </groups>
+    <test name="Amazon Shopping App Test Cases" duration-ms="82997" started-at="2020-10-28T15:57:23Z" finished-at="2020-10-28T15:58:46Z">
+      <class name="testCases.PurchaseAnItem">
+        <test-method status="PASS" signature="g()[pri:0, instance:testCases.PurchaseAnItem@3bfdc050]" name="g" is-config="true" duration-ms="1032" started-at="2020-10-28T15:57:23Z" finished-at="2020-10-28T15:57:24Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- g -->
+        <test-method status="PASS" signature="startAppium()[pri:0, instance:testCases.PurchaseAnItem@3bfdc050]" name="startAppium" is-config="true" duration-ms="27129" started-at="2020-10-28T15:57:24Z" finished-at="2020-10-28T15:57:52Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- startAppium -->
+        <test-method status="PASS" signature="purchaseAnItem()[pri:0, instance:testCases.PurchaseAnItem@3bfdc050]" name="purchaseAnItem" duration-ms="54807" started-at="2020-10-28T15:57:52Z" finished-at="2020-10-28T15:58:46Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- purchaseAnItem -->
+      </class> <!-- testCases.PurchaseAnItem -->
+    </test> <!-- Amazon Shopping App Test Cases -->
+  </suite> <!-- Amazon Shopping Purchases -->
+</testng-results>

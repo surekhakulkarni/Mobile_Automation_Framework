@@ -1,0 +1,29 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Amazon Shopping Purchases">
+	<test name="Amazon Shopping App Test Cases">
+	
+	
+	
+		<classes>
+			<class name="testCases.PurchaseAnItem">
+			
+	<methods>
+	 
+	
+
+<include name = "purchaseAnItem"/>
+
+
+	
+	
+	
+	
+	   
+	           
+           </methods>
+			
+             </class>
+		</classes>
+	</test>
+</suite>
+	    	
